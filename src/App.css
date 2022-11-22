@@ -1,6 +1,8 @@
 .App {
   text-align: center;
+  display: block;
 }
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -10,8 +12,26 @@
 }
 .divbtn{
   float: left;
+
 }
 
+.fixed_header{
+overflow: auto;
+height: 300px;
+padding-left: 20px;
+display:block;
+}
+
+
+.stickheader{
+  position: sticky;
+  top: 0;
+}
+.cardsize{
+
+width:820px;
+
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -28,9 +48,11 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
 .App-link {
   color: #61dafb;
 }
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
