@@ -37,8 +37,10 @@ const EmpListing = () => {
         })
     }, [])
     return (
+        <center>
         <div className="container">
-            <div className="card">
+           
+            <div className="card cardsize">
                 <div className="card-title">
                     <h2>Employee Listing</h2>
                 </div>
@@ -46,9 +48,19 @@ const EmpListing = () => {
                     <div className="divbtn">
                         <Link to="employee/create" className="btn btn-success">Add New (+)</Link>
                     </div>
-                    <table className="table table-bordered">
-                        <thead className="bg-dark text-white">
+                    <div className="divbtn">
+                        <button className="btn btn-primary">Export(↓)</button>
+                    </div>
+                    <div className="divbtn">
+                        <button className="btn btn-warning">Select All(*)</button>
+                    </div>
+                    <div className="divbtn">
+                        <button className="btn btn-danger">Remove(-)</button>
+                    </div>
+                    <table className="table table-bordered table table-hover fixed_header">
+                        <thead className="bg-dark text-white stickheader">
                             <tr>
+                            <td></td>
                                 <td>ID</td>
                                 <td>Name</td>
                                 <td>Email</td>
@@ -60,7 +72,10 @@ const EmpListing = () => {
 
                             {empdata &&
                                 empdata.map(item => (
+                                    
                                     <tr key={item.id}>
+                                        <td><input type="checkbox"/>
+                                    </td>
                                         <td>{item.id}</td>
                                         <td>{item.name}</td>
                                         <td>{item.email}</td>
@@ -78,7 +93,9 @@ const EmpListing = () => {
                     </table>
                 </div>
             </div>
+          
         </div>
+        </center>
     );
 }
 
