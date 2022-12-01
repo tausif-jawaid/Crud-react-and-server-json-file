@@ -8,10 +8,14 @@ const EmpDetail = () => {
     const [empdata, empdatachange] = useState({});
 
     useEffect(() => {
-        fetch("http://localhost:8000/employee/" + empid).then((res) => {
+        fetch("http://localhost:8001/api/workouts/" + empid).then((res) => {
             return res.json();
         }).then((resp) => {
-            empdatachange(resp);
+            if(resp.status ==200){
+                empdatachange(resp);
+            }else{
+                alert('No Record Found')
+            }
         }).catch((err) => {
             console.log(err.message);
         })
